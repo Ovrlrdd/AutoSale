@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<h2>Список авто</h2>
+
+    @foreach (var item in Model)
+    {
+                <div class="wrapper">
+                    <div class="product-img">
+                        <img src="@item.Img" height="420" width="327">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-text">
+                            <h1>@item.CarBrand</h1>
+                            <h2>@item.CarModel, @item.Year</h2>
+                            <p>@item.Description</p>
+                        </div>
+                    <div class="product-price-btn">
+                        <p>Цена @item.Price рублей</p>
+                    </div>
+                    </div>
+                </div>
+    }
+

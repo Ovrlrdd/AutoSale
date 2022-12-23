@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Titile"] = "Edit page";
+}
+@model IEnumerable<Cars>
+<h2>Редактировать авто</h2>
+<table class="table">
+     <tr><th>Марка</th><th>Модель</th><th>Год</th><th>Цена</th></tr>
+    @foreach (var item in Model)
+    {
+            <tr>
+                <td>@item.CarBrand</td>
+                <td>@item.CarModel</td>
+                <td>@item.Year</td>
+                <td>@item.Price</td>
+                <td>@item.Description</td>
+                <td>@item.Img</td>
+                <td>
+                    <a asp-action="Edit" asp-controller="Home" asp-route-id="@item.id">Изменить</a>
+                </td>
+                <td>
+                    <form asp-controller="Home" asp-action="Delete" method="post"  asp-route-id="@item.id">
+                        <input type="submit" value="Удалить" />
+                    </form>
+                </td>
+            </tr>
+    }
+</table>

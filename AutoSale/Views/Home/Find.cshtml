@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Find page";
+}
+<h2>Найти авто</h2>
+@using (Html.BeginForm("Find", "Home", FormMethod.Get))
+{
+    @Html.TextBox("searching")
+    <input type="submit" value="submit" />
+}
+<table>
+    <tr>
+        <th>CarBrand</th><th>CarModel</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+                    <div class="wrapper">
+                        <div class="product-img">
+                            <img src="@item.Img" height="420" width="327">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-text">
+                                <h1>@item.CarBrand</h1>
+                                <h2>@item.CarModel, @item.Year</h2>
+                                <p>@item.Description</p>
+                            </div>
+                        <div class="product-price-btn">
+                            <p>Цена @item.Price рублей</p>
+                        </div>
+                        </div>
+                    </div>
+    }
+</table>

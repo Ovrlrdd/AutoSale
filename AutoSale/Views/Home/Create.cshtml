@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Импорт данных";
+}
+@model Cars
+
+<h2>Добавить новый автомобиль</h2>
+<form asp-action="create" asp-controller="home">
+    <div class="form-group">
+    <p>
+        <label asp-for="CarBrand">Марка</label><br />
+        <input type="text" asp-for="CarBrand" class="form-control" />
+    </p>
+    <p>
+        <label asp-for="CarModel">Модель</label><br />
+        <input type="text" asp-for="CarModel" class="form-control" />
+    </p>
+    <p>
+        <label asp-for="Year">Год</label><br />
+        <input type="text" asp-for="Year" class="form-control" />
+    </p>
+    <p>
+        <label asp-for="Price">Цена</label><br />
+        <input type="text" asp-for="Price" class="form-control" />
+    </p>
+    <p>
+        <label asp-for="Description">Описание</label><br />
+        <input type="text" asp-for="Description" class="form-control" />
+    </p>
+        <label asp-for="Img">Картинка</label><br />
+        <input type="text" asp-for="Img" class="form-control" />
+    <p>
+        <input type="submit" value="Отправить" class="btn btn-primary" />
+    </p>
+    </div>
+</form>
